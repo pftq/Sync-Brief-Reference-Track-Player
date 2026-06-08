@@ -3,7 +3,7 @@
   "name": "Sync Brief Track Preview",
   "version": "1.0",
   "description": "Hover over track references in Sync Brief emails to preview them on YouTube.",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "contextMenus"],
   "host_permissions": ["https://www.youtube.com/*"],
   "background": {
     "service_worker": "background.js"
@@ -14,6 +14,12 @@
       "js": ["content.js"],
       "css": ["player.css"],
       "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["patterns.txt"],
+      "matches": ["https://mail.google.com/*"]
     }
   ],
   "icons": {

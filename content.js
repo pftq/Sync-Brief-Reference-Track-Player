@@ -26,6 +26,52 @@
     // Unquoted: "soundalike style of [Title] by [Artist]" — tricky, skip for safety
   ];
 
+  const DEFAULT_PATTERN_SOURCES = [
+    '\\u201c([^""]{2,60})\\u201d\\s+by\\s+([\\w][\\w\\s&,.\'-]{1,50})',
+    '"([^"]{2,60})"\\s+by\\s+([\\w][\\w\\s&,.\'-]{1,50})',
+    '\\u2018([^\\u2019]{2,60})\\u2019\\s+by\\s+([\\w][\\w\\s&,.\'-]{1,50})'
+  ];
+  let patterns = PATTERNS;
+
+  function readConfigLines(text) {
+    return text
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter((line) => line && !line.startsWith('#'));
+  }
+
+  function compilePatterns(sources) {
+    const compiled = [];
+
+    for (const source of sources) {
+      try {
+        compiled.push(new RegExp(source, 'gi'));
+      } catch (error) {
+        console.warn('[SBTP] Ignoring invalid pattern:', source, error);
+      }
+    }
+
+    return compiled.length ? compiled : PATTERNS;
+  }
+
+  async function loadPatterns() {
+    try {
+      const response = await fetch(chrome.runtime.getURL('patterns.txt'));
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const sources = readConfigLines(await response.text());
+
+      patterns = compilePatterns(sources);
+    } catch (error) {
+      console.warn('[SBTP] Could not load patterns.txt; using defaults.', error);
+      patterns = compilePatterns(DEFAULT_PATTERN_SOURCES);
+    }
+  }
+
+  function scanEmailBodies() {
+    document.querySelectorAll('.a3s, .adn').forEach(walkAndHighlight);
+  }
+
   // ─── Build Player UI ──────────────────────────────────────────────────────
   function buildPlayer() {
     if (playerContainer) return;
@@ -174,6 +220,14 @@
     });
   }
 
+  chrome.runtime.onMessage.addListener((message) => {
+    if (!message || message.type !== 'SBTP_PLAY_TRACK') return false;
+
+    const trackName = String(message.trackName || '').trim();
+    if (trackName) showPlayer(trackName, '');
+    return false;
+  });
+
   function revealContainer() {
     playerContainer.style.display = '';
     playerContainer.classList.add('sbtp-animating');
@@ -218,7 +272,7 @@
     let anyMatch = false;
 
     // Try each pattern
-    for (const pattern of PATTERNS) {
+    for (const pattern of patterns) {
       pattern.lastIndex = 0;
       let match;
       // Reset and try on the full original text
@@ -230,10 +284,12 @@
         const before = fresh.slice(lastIndex, match.index);
         if (before) fragment.appendChild(document.createTextNode(before));
 
-        const trackName = match[1].trim();
-        const artistRaw = match[2];
+        const trackName = (match[1] || '').trim();
+        const artistRaw = match[2] || '';
         // Trim artist: stop at sentence-ending punctuation or common terminators
-        const artistName = artistRaw.split(/[.!?;,\n]/)[0].trim();
+        const artistName = artistRaw ? artistRaw.split(/[.!?;,\n]/)[0].trim() : '';
+
+        if (!trackName) continue;
 
         const span = document.createElement('span');
         span.className = 'sbtp-track-ref';
@@ -330,9 +386,11 @@
   }
 
   // ─── Init ──────────────────────────────────────────────────────────────────
-  function init() {
+  async function init() {
+    await loadPatterns();
+
     // Scan any already-rendered email content
-    document.querySelectorAll('.a3s, .adn').forEach(walkAndHighlight);
+    scanEmailBodies();
     observeGmail();
   }
 

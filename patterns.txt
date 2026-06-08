@@ -1,0 +1,8 @@
+# One regex pattern per line.
+# Blank lines and lines starting with # are ignored.
+# The first capture group is searched on YouTube.
+# The optional second capture group is treated as the artist name and appended to the search.
+
+\u201c([^""]{2,60})\u201d\s+by\s+([\w][\w\s&,.'-]{1,50})
+"([^"]{2,60})"\s+by\s+([\w][\w\s&,.'-]{1,50})
+\u2018([^\u2019]{2,60})\u2019\s+by\s+([\w][\w\s&,.'-]{1,50})

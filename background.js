@@ -1,5 +1,28 @@
 // Resolves a YouTube search query to the first regular video result.
 
+const PLAY_SELECTION_MENU_ID = 'sbtp-play-selection';
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: PLAY_SELECTION_MENU_ID,
+    title: 'Play on Sync Brief Track Player...',
+    contexts: ['selection'],
+    documentUrlPatterns: ['https://mail.google.com/*']
+  });
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId !== PLAY_SELECTION_MENU_ID || !tab || !tab.id) return;
+
+  const trackName = String(info.selectionText || '').trim();
+  if (!trackName) return;
+
+  chrome.tabs.sendMessage(tab.id, {
+    type: 'SBTP_PLAY_TRACK',
+    trackName
+  });
+});
+
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (!message || message.type !== 'SBTP_FIND_VIDEO') return false;
 
