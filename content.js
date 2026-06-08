@@ -58,7 +58,7 @@
       </div>
       <div id="sbtp-footer">
         <span id="sbtp-yt-logo">▶ YouTube</span>
-        <span id="sbtp-hint">Hover a track to preview • close when done</span>
+        <span id="sbtp-hint">Sync Brief Track Player by pftq</span>
       </div>
     `;
 
