@@ -1,0 +1,195 @@
+/* Sync Brief Track Preview - Player Styles */
+
+#sbtp-player-container {
+  position: fixed;
+  z-index: 2147483647;
+  bottom: 32px;
+  right: 32px;
+  width: 320px;
+  background: #0f0f0f;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.08);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+#sbtp-player-container.sbtp-visible {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#sbtp-player-container.sbtp-animating {
+  display: flex;
+}
+
+#sbtp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 8px;
+  gap: 8px;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+#sbtp-track-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+#sbtp-track-name {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+#sbtp-artist-name {
+  color: #aaa;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+#sbtp-controls {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.sbtp-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.12s;
+  padding: 0;
+  line-height: 1;
+}
+
+.sbtp-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+#sbtp-close-btn {
+  background: rgba(255,60,60,0.18);
+  color: #ff6b6b;
+}
+
+#sbtp-close-btn:hover {
+  background: rgba(255,60,60,0.35);
+}
+
+#sbtp-iframe-wrap {
+  position: relative;
+  width: 320px;
+  height: 180px;
+  background: #000;
+}
+
+#sbtp-iframe-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+#sbtp-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f0f;
+  color: #aaa;
+  font-size: 12px;
+  gap: 10px;
+  transition: opacity 0.25s;
+}
+
+#sbtp-loading.sbtp-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sbtp-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(255,255,255,0.12);
+  border-top-color: #ff0000;
+  border-radius: 50%;
+  animation: sbtp-spin 0.75s linear infinite;
+}
+
+@keyframes sbtp-spin {
+  to { transform: rotate(360deg); }
+}
+
+#sbtp-footer {
+  padding: 5px 12px 7px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+#sbtp-yt-logo {
+  font-size: 10px;
+  color: #ff0000;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+#sbtp-hint {
+  color: #666;
+  font-size: 10px;
+}
+
+/* Highlight spans injected into email */
+.sbtp-track-ref {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #7eb8ff;
+  border-radius: 4px;
+  padding: 1px 5px;
+  cursor: pointer;
+  border-bottom: 1.5px solid #4a90e2;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  display: inline;
+  position: relative;
+}
+
+.sbtp-track-ref:hover {
+  background: linear-gradient(135deg, #0d2137 0%, #0a1628 100%);
+  color: #a8d0ff;
+}
+
+.sbtp-track-ref::after {
+  content: ' ▶';
+  font-size: 9px;
+  opacity: 0.7;
+  vertical-align: middle;
+}

@@ -1,0 +1,1181 @@
+Delivered-To: pqpftq@gmail.com
+Received: by 2002:a05:6402:a29b:10b0:691:a89c:18f0 with SMTP id h27-n1csp995152edf;
+        Mon, 8 Jun 2026 09:11:43 -0700 (PDT)
+X-Forwarded-Encrypted: i=6; AFNElJ92xITvRu9e7rXDRYE1f9KFfAJFivMUMFJ6BkyN6NvQlEy5CpqSu83doyyepluLCkb6MrpmTHA=@gmail.com
+X-Received: by 2002:a2e:bc17:0:b0:396:7927:2d14 with SMTP id 38308e7fff4ca-396d078daa0mr47039281fa.8.1780935102994;
+        Mon, 08 Jun 2026 09:11:42 -0700 (PDT)
+ARC-Seal: i=5; a=rsa-sha256; t=1780935102; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=IGlxXMQGc8xvSJDqWYQ1Dhw5ZHH31794zeP5eUqGkadseZ4E5DyNBWQzlpzzPIBhdm
+         8vHtFRtuCKAj42AZL1kZIVs7MNcL2IDrC8rTn6sjRd+c7dcr5LsY3YwBHKorhyBZpZgU
+         fG++6MUFo0C0nSzmZ4wF0RJYQJ0uBcvc8yw66/fi34mfgBZxtIQQ/wvC7OQcCPieXgbh
+         cflQak3vPao+pvafymLqkbl0/gVHQ6dMf1OklGTr8kiCQNV9ms4+Qzhdt1azC4VPEI3m
+         298Vf05MPh28oaezWDs+khB+EJtrGbB+SIFRf+CfZ2Cd8Qn/XNgB2klqwX0fSlWPMMMO
+         hyXQ==
+ARC-Message-Signature: i=5; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-archive:list-help:list-post:list-id:mailing-list:precedence
+         :content-transfer-encoding:message-id:list-unsubscribe
+         :list-unsubscribe-post:reply-to:to:from:subject:mime-version:date
+         :dkim-signature:delivered-to;
+        bh=OMY8koQL0s+NpAwNWZa0KHRu1K25vRpZ69/Ynl/WHTo=;
+        fh=hOLmIp1IGG0uBQ//bCO8JB5QLJivZ8rNMfeu4v3SvIg=;
+        b=EJuFHJTYw2ENsi1EiZgVZdVPv+ZDd1RhFkDw3pzphAjU1Ocdf5dBnctFWA09xY/s0B
+         y35xsgvGGaBf5hVmp83BWMBAW66IX0xu4Zd0ZpiWiV8yNaNYKt4kdd0v8IwVCzAZRQJa
+         46YmfkHoOTmD0B7woGRxkPcWFC5SJdnf9UxB0aeMrv4/eV0W+hw+bNPace5wypFRyvPl
+         b2sKrQ/yBSsq6rU5r90PYjVbitgcKZU3ZBPMvJXwGhUfgu4HKN2RDxQmkmimsU/CshYS
+         RSb30lyxixsnLyUA1pReBlcJwaQle3B6btiF3hddbqGFyuPT19Kp0sQ6CBR2NvOX+Es6
+         zSmA==;
+        dara=google.com
+ARC-Authentication-Results: i=5; mx.google.com;
+       dkim=pass header.i=@autodidactic.ai header.s=google header.b=gMa87Xdw;
+       arc=pass (i=4 spf=pass spfdomain=autodidactic.ai dkim=pass dkdomain=autodidactic.ai dmarc=pass fromdomain=autodidactic.ai);
+       spf=pass (google.com: domain of pftq+caf_=pqpftq=gmail.com@autodidactic.ai designates 209.85.220.41 as permitted sender) smtp.mailfrom="pftq+caf_=pqpftq=gmail.com@autodidactic.ai";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=autodidactic.ai;
+       dara=neutral header.i=@gmail.com
+Return-Path: <pftq+caf_=pqpftq=gmail.com@autodidactic.ai>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 38308e7fff4ca-396ad036c70sor23769611fa.8.2026.06.08.09.11.42
+        for <pqpftq@gmail.com>
+        (Google Transport Security);
+        Mon, 08 Jun 2026 09:11:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pftq+caf_=pqpftq=gmail.com@autodidactic.ai designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@autodidactic.ai header.s=google header.b=gMa87Xdw;
+       arc=pass (i=4 spf=pass spfdomain=autodidactic.ai dkim=pass dkdomain=autodidactic.ai dmarc=pass fromdomain=autodidactic.ai);
+       spf=pass (google.com: domain of pftq+caf_=pqpftq=gmail.com@autodidactic.ai designates 209.85.220.41 as permitted sender) smtp.mailfrom="pftq+caf_=pqpftq=gmail.com@autodidactic.ai";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=autodidactic.ai;
+       dara=neutral header.i=@gmail.com
+ARC-Seal: i=4; a=rsa-sha256; t=1780935102; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=EOzxG+iNA9BVPFWNuBsPCIJfrFRws8ys6wGC16BX8z/+65GDEK6ILcMlae7T+8nUqN
+         3DXSHHZHfeFp00BBbL4TsXFOjRhrx026GdGVzSNFLcWXxdZGQwXJLaMR7Uq8FXTnCu44
+         yYBkGOSEqyRO9aoCE8zpz3C19zk9xMPuYtWMp08r50nQxbVNZfQHZ4D4mY48EBqaiM7D
+         Uf9nKSPheeTcOh2IbJQh70ZoddWcxIlP4kk2bCQ7JAUZI44ownqHJSgyD3EDVN9BtH0Z
+         QA0TSvbxy+F0s6qj45He9eGydaCHWqpP3D59DS7IkPdnosrqp/CmhmKNQIaFEFH+5zJx
+         BXUA==
+ARC-Message-Signature: i=4; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-archive:list-help:list-post:list-id:mailing-list:precedence
+         :content-transfer-encoding:message-id:list-unsubscribe
+         :list-unsubscribe-post:reply-to:to:from:subject:mime-version:date
+         :dkim-signature:delivered-to;
+        bh=OMY8koQL0s+NpAwNWZa0KHRu1K25vRpZ69/Ynl/WHTo=;
+        fh=hOLmIp1IGG0uBQ//bCO8JB5QLJivZ8rNMfeu4v3SvIg=;
+        b=PJkq5JClqvcC6iGg4VJdb6Qh5l4qMoxVTzo6NrtoBalSy/AMflREsrRFYyzM/ygs16
+         h++cn1lHfOi1tHHvcf/5fTtpO4HqZjLA4vSQgTXo1TgACr0rLAyMKadaYUe2VMEGDBJD
+         4NjLAHqmx87ueAnbpTKir1lJfcWkxxLd3J8ueEBuwLAXAU4AI9yI9srGdxcsQnoa2Yc6
+         +ImITuy2cWw0FOeTpuo9DUf5yC9aYbn4jWX3opftVXixmye0A4wSRcM+vdJJzdHUk8cp
+         Evv7bfz+6/t1eGxW5ZewJmRv/fRSyn226XM30BGEusgdxOCMPb5u6Vdreg1oT1436E1U
+         +ZTA==;
+        dara=google.com
+ARC-Authentication-Results: i=4; mx.google.com;
+       dkim=pass header.i=@autodidactic.ai header.s=google header.b=gMa87Xdw;
+       arc=pass (i=2 spf=pass spfdomain=creator.patreon.com dkim=pass dkdomain=creator.patreon.com dmarc=pass fromdomain=patreon.com);
+       spf=pass (google.com: domain of studios+bncbaabbn6ttpiqmgqex6ndgri@autodidactic.ai designates 209.85.220.69 as permitted sender) smtp.mailfrom=studios+bncBAABBN6TTPIQMGQEX6NDGRI@autodidactic.ai;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=autodidactic.ai;
+       dara=neutral header.i=@autodidactic.ai
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1780935102; x=1781539902;
+        h=list-archive:list-help:list-post:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender
+         :content-transfer-encoding:message-id:list-unsubscribe
+         :list-unsubscribe-post:reply-to:to:from:subject:mime-version:date
+         :x-beenthere:dkim-signature:delivered-to:x-forwarded-for
+         :x-forwarded-to:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=OMY8koQL0s+NpAwNWZa0KHRu1K25vRpZ69/Ynl/WHTo=;
+        b=HIpnrzCBHehu2Q+p+4aGwOtnSz9iOpI4G3uQLRfZ1omihtk0SWwgaotzzCW0Hju+yK
+         8G310SgIf54RM8OSSM8aUzeFPfu4w1Bui05CBPvfshI3jahBZavbmoGuMpVi9nti818A
+         bZYdkgihnxwVpbPbWi9t/1FulsO1+aox97m87ouz57PVbYNqhdg/spoRz57OjSBm0k94
+         qH2etwzOzTUtU9q90jaPJuRe06FyrDGTnJhUGMNvJ2CFEbfPbTLntErzbH3tI+RaIpsC
+         tN2EbQbEtsXaleQ7OwcvllaJLMZk4dE4SZi6suo7M80o13M9tXjsO7mzLqwsnAe12HKp
+         86GQ==
+X-Forwarded-Encrypted: i=4; AFNElJ9Svdazz5YvyujJ03HeNziARma7qWD8MIArxwAoq23AyiSnMqlS+gqD/LZU+lAqVo1IHYg2+6w=@gmail.com
+X-Gm-Message-State: AOJu0YysfGll8biofD1NOJ/ZKiNqH/tanLJeAaTuWN1CmASjAvCo9dyq
+	CWRQAeN61vyzIp/8QO3zeDGMUr8mH4pXNciEtOXn6YQlIm2hYJR3g8r2wvGxaHqlvh9COzNY3VL
+	pEA/92fcYXqRVwwRuSNNRcucsvqRMq1yrWyqeqhAwskVVUeQz3AqChx58a+fIa89Ktnz2BCFq1I
+	LfgZQD
+X-Received: by 2002:a2e:be12:0:b0:393:77ef:9079 with SMTP id 38308e7fff4ca-396d093dd14mr43078251fa.28.1780935102122;
+        Mon, 08 Jun 2026 09:11:42 -0700 (PDT)
+X-Forwarded-To: pqpftq@gmail.com
+X-Forwarded-For: pftq@autodidactic.ai pqpftq@gmail.com
+Delivered-To: pftq@autodidactic.ai
+Received: by 2002:a05:651c:1189:b0:396:6630:f4c3 with SMTP id w9csp1380522ljo;
+        Mon, 8 Jun 2026 09:11:37 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AFNElJ91Aj6qDouk+nDcnc7rjtwD4TldjXlWwENqvqfzMX+l4Q53eRMgGy8/v3iIOyQ48ZaxqbXk@autodidactic.ai
+X-Received: by 2002:a17:90b:5145:b0:36d:81b3:61a1 with SMTP id 98e67ed59e1d1-370eed0b63bmr17236703a91.7.1780935097062;
+        Mon, 08 Jun 2026 09:11:37 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1780935097; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=WW98T+fAWu2rGSdIl3nAKZWoLC6HOCn9SBHOwYTl+zJ/84mdnZ8qHChzLs9IU06Gkh
+         dWTS/YFTJWURiYLyFdApp3hRR2rTyi7XI/Q2zg57fPVOcLsVXhJaXA8RV/bl0sTibDzf
+         MtMQ0quz8pftREGZhgvn+4yeSovRTslIwethCutMokVyz1mAmnxFZqUUvRd00Jwep8HH
+         5oYNgm4SixwcTltNDEJLDUxKP1fz9TLWDY6SyZ3nY4IdYOLTCoe95V/0w9nsqbSXwXay
+         +GNU9XjEVs+619tEMtKVQmGq9yncJVkaJ1YFfnNkJZH3PwE2ruPYdwcJ6M970wvpu35P
+         VAoQ==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-archive:list-help:list-post:list-id:mailing-list:precedence
+         :content-transfer-encoding:message-id:list-unsubscribe
+         :list-unsubscribe-post:reply-to:to:from:subject:mime-version:date
+         :dkim-signature;
+        bh=OMY8koQL0s+NpAwNWZa0KHRu1K25vRpZ69/Ynl/WHTo=;
+        fh=r5ZT7toekLX0QY79lHjwDFjjvnKsuz5JJUMCoA3ncrs=;
+        b=i01CXT+OZ8Wgcgm6YBMZ93UTR/pqoHabnUEJyPd1AfRxTsmaAbpECkVkY2tDVmEjOl
+         9Fc9Mc7RRZsrQcz5HH7JaMKsDqe/YiTOsafoOm6hyQFb/T9AsVTZcgh7ROWzC2XLv9r2
+         VpKcDBmBEPgPba12qx6Q1gWiNNumiPinyFY3ETK0+JUOE0hFpBxFCMQZv8H3qfWblCdh
+         Fndl26QXE5lYAWLhszq9jRebvcW0b/eurDSSSCyKH2wS+VLs3FNqT7H44dZ7YClDBMxq
+         4bBK22iOdRU7NBiVG6SBRzU8b7Pkf4ZX7w75P4S57hLEgvz86ensbhC9GPkpfT0FyZU+
+         Bgwg==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@autodidactic.ai header.s=google header.b=gMa87Xdw;
+       arc=pass (i=2 spf=pass spfdomain=creator.patreon.com dkim=pass dkdomain=creator.patreon.com dmarc=pass fromdomain=patreon.com);
+       spf=pass (google.com: domain of studios+bncbaabbn6ttpiqmgqex6ndgri@autodidactic.ai designates 209.85.220.69 as permitted sender) smtp.mailfrom=studios+bncBAABBN6TTPIQMGQEX6NDGRI@autodidactic.ai;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=autodidactic.ai;
+       dara=neutral header.i=@autodidactic.ai
+Return-Path: <studios+bncBAABBN6TTPIQMGQEX6NDGRI@autodidactic.ai>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-36e1f43d2dcsor8613630a91.0.2026.06.08.09.11.36
+        for <pftq@autodidactic.ai>
+        (Google Transport Security);
+        Mon, 08 Jun 2026 09:11:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of studios+bncbaabbn6ttpiqmgqex6ndgri@autodidactic.ai designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+ARC-Seal: i=2; a=rsa-sha256; t=1780935096; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=O25qJ5Uq1qwVARsLJjyV0rlz/f3z3Mo/sDSZiromYU8VWul5chTORySFYTBba7mSWa
+         7VkPShK6VM3JDWuWwrpRNwqAeENL2xfiN3HiIkJbdnjFjcWFR0ZilzGS2fq8Snc8YayE
+         QDHSGxGv4rKme47eb4pwU4FVcAOEaGVRxb6RtH0jqOvI4p/0LrdB0ZoUb19Ye3dD76Vs
+         t90I7a4zHqr1wUnSdCNfc0/TG5W9OlSd18CqvY41reWrPjUwCaH+EbSBSwSxZ4Xr6Jn7
+         FgxgXOeKi4sI6dsYenoh/KVYamrwPLku8kfkFtHTxygH2v3Cq4L/ePKKlDnkNGYNLJWQ
+         ThGA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-archive:list-help:list-post:list-id:mailing-list:precedence
+         :content-transfer-encoding:message-id:list-unsubscribe
+         :list-unsubscribe-post:reply-to:to:from:subject:mime-version:date
+         :dkim-signature;
+        bh=OMY8koQL0s+NpAwNWZa0KHRu1K25vRpZ69/Ynl/WHTo=;
+        fh=r5ZT7toekLX0QY79lHjwDFjjvnKsuz5JJUMCoA3ncrs=;
+        b=KC1dgmsJn5UnKl0uMH3yfTcbJRQnIfEm0wsUwUa2Gt5SVtNFsJ+uXsQKgY+v62EGqC
+         OXmXPDpB6rAD82+xYPdXiXVdNQa8v8xy3qMgdpqjKlLAja1fWKl5DRR6OUcvXebhRLw4
+         +Le4QgiU9B0MTfuUVFbTK3QIPAtYCA3EKC6okfmg2DflsXiB6ZUW0KE9QOMlRt2Z6At0
+         fM2Y0AwdnYoOgp0rFgo8SVd92Re+feTuG52yAlh1LyhkIc8+AvytKarMKDGTOkw1AgPh
+         QiL8F6zJzPL/nOJpBcQCIpggefIUfqWLvy7dwQxQJ/FAOLa0ZOsaQUDrx9zkfzM1KavU
+         NGww==;
+        darn=autodidactic.ai
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@creator.patreon.com header.s=pdk2 header.b=y1ruZtOY;
+       spf=pass (google.com: domain of bounce+a847d3.94ce230-studios=autodidactic.ai@creator.patreon.com designates 161.38.201.186 as permitted sender) smtp.mailfrom="bounce+a847d3.94ce230-studios=autodidactic.ai@creator.patreon.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=patreon.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=autodidactic.ai; s=google; t=1780935096; x=1781539896; darn=autodidactic.ai;
+        h=list-archive:list-help:list-post:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender
+         :content-transfer-encoding:message-id:list-unsubscribe
+         :list-unsubscribe-post:reply-to:to:from:subject:mime-version:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=OMY8koQL0s+NpAwNWZa0KHRu1K25vRpZ69/Ynl/WHTo=;
+        b=gMa87XdwhZrRVlo2Ej/HXDTkET4uQ5HKDXVJrCpshohBkxUpofUtm3deBCmO3ZB0P2
+         WjHxe4IevdJ3G7I5ics/vUyPT4N/IIh08r5DvclsLDSpBXgTqg0IeOu1VcPshgZvr4Jq
+         P00REKpyr7oZjsZmSjHSLpYQRKX1ga7m2peLo=
+X-Forwarded-Encrypted: i=2; AFNElJ+18DZkMB2wk89JOEUwSKs/Klu1zSe3zJFBvWgGt28zh/S4TDhEvLPV+0AB8lhjyo1/EWki@autodidactic.ai
+X-Received: by 2002:a17:90b:53cf:b0:36d:b818:f848 with SMTP id 98e67ed59e1d1-370ee82fa47mr16953254a91.5.1780935096095;
+        Mon, 08 Jun 2026 09:11:36 -0700 (PDT)
+X-BeenThere: studios@autodidactic.ai; h="AX0PUUc2a4t8BoPRaGM05nDrGh/kLXqK69EMVARpngbP8J6WZg=="
+Received: by 2002:a17:90b:48c4:b0:36b:74e9:20e6 with SMTP id
+ 98e67ed59e1d1-36f65d418e7ls6278285a91.1.-pod-prod-09-us; Mon, 08 Jun 2026
+ 09:11:35 -0700 (PDT)
+X-Received: by 2002:a05:6a20:3d1f:b0:3b4:6a31:6d0f with SMTP id adf61e73a8af0-3b4ccfef842mr19785280637.41.1780935095101;
+        Mon, 08 Jun 2026 09:11:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1780935095; cv=none;
+        d=google.com; s=arc-20240605;
+        b=NdWQqUcubAnfR5AjxH6ehN2Uv+j6B6FmaRwsjhRODU7cX0B2un/ia7wSoXdtNo5xJe
+         ntmcz1qgBjSqAOoprbuac18pzvZhf7v0PMJyE1POgdYBrxdh558o9C2miXeXangOmuut
+         jo4LCgNxlvmBvjomGpLcp7lH62thpE4d+yILa0UPmR2Pl4oJd42mn8Y0E9nRH19gJDnn
+         n3c6Ut2slmeMUYYTeXcKsUlB03WgR7vrxy2877IhapeMv+hq5kc62TvwQXhdhHjVJwgv
+         7WKyjb5zwMtbOrWr/969FzHUEPkVF1sPx0yKTXr0B2YCvoAw0cQGGlhNR9f5cNq2Ey8A
+         pe1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:message-id:list-unsubscribe
+         :list-unsubscribe-post:reply-to:to:from:subject:mime-version:date
+         :dkim-signature;
+        bh=OMY8koQL0s+NpAwNWZa0KHRu1K25vRpZ69/Ynl/WHTo=;
+        fh=ErJgNjaOI699VlJj17LfAP38mPUpDgkH6cjN1QjBkqI=;
+        b=aovXbyV6Cr0sJjuOymbQAekK4EukfpuQVNXN7qZZZg8M7glco6thYuv3v3PRURNec8
+         10tBSbNe5g6sVxK2tfwoIeqW6oVxGxvH8otbImdvLHsvM5JyqUHrb5bDbAI0YAcUDnxz
+         SWBnHkcqM/zOgBj22Io4g+coYJh0S7iswNUQr4tYBgToVAGyHnil5T+8V74Zzl52Sd7m
+         J34HSxXe9gmrByLeAt/BvHFiOBm+F73CEamZx1cKY1zHuHU9gR8vG8LMGVI/j5y/ALfc
+         WaXgNUS2MLQWzvjSto2h5l3xOdAflt8kAHCduAJ7SYsD3RyWIPK1f/mXTvqUyc1QCWcu
+         7Q3Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@creator.patreon.com header.s=pdk2 header.b=y1ruZtOY;
+       spf=pass (google.com: domain of bounce+a847d3.94ce230-studios=autodidactic.ai@creator.patreon.com designates 161.38.201.186 as permitted sender) smtp.mailfrom="bounce+a847d3.94ce230-studios=autodidactic.ai@creator.patreon.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=patreon.com
+Received: from 201-186.static.patreon.com (201-186.static.patreon.com. [161.38.201.186])
+        by mx.google.com with UTF8SMTPS id 41be03b00d2f7-c85df1df360si27477304a12.279.2026.06.08.09.11.34
+        for <studios@autodidactic.ai>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 08 Jun 2026 09:11:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+a847d3.94ce230-studios=autodidactic.ai@creator.patreon.com designates 161.38.201.186 as permitted sender) client-ip=161.38.201.186;
+X-Mailgun-Sid: WyIyMDZmNyIsInN0dWRpb3NAYXV0b2RpZGFjdGljLmFpIiwiOTRjZTIzMCJd
+Received: by 40c8c545f1d2c8537a513c3405b686a8e3a31c46c3a1c8ed011e82aa5726f95b with HTTP
+ id 6a26e9b63df52359f95f85bd; Mon, 08 Jun 2026 16:11:34 GMT
+X-Mailgun-Sending-Ip: 161.38.201.186
+Date: Mon, 08 Jun 2026 16:11:34 +0000
+Mime-Version: 1.0
+Subject: Medical Drama Series Needs Indie Folk ($4200 sync fee)
+From: "'The Sync Opps.' via Autodidactic Studios" <studios@autodidactic.ai>
+To: studios@autodidactic.ai
+X-Mailgun-Tag: template_newsletterpost
+X-Mailgun-Rewrite-Sender-Header: false
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: true
+Reply-To: no-reply@creator.patreon.com
+X-Patreon-Uuid: 9d50fdc0-1950-4f4d-8d0a-4c040f3bc703
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <mailto:googlegroups-manage+504113984088+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/autodidactic.ai/group/studios/subscribe>
+X-Mailgun-Variables: {"bulk_mode": "0", "campaign_id": "10853791", "custom_nonce":
+ "NewsletterPost:160523516:2026-06-08 16:08:03", "domain_override":
+ "creator.patreon.com", "email_campaign_name": "transactional", "email_id":
+ "97c15bd1-21a0-4327-88f9-d992c1e2244e", "email_notif_campaign_id":
+ "10853791", "email_notif_type": "campaign_email_post", "email_priority":
+ "standard", "email_system": "email-service-nunjucks", "extra_logging_props":
+ "{\"entity_id\":null,\"primary_entity\":{\"entity_id\":160523516,\"entity_type\":\"post\"},\"secondary_entities\":null,\"sender\":{\"sender_id\":10853791,\"sender_type\":\"campaign\"},\"campaign_id\":\"10853791\",\"notification_name\":\"NewPost\",\"fanout_id\":\"019ea7fd-bdf4-7d62-9844-c933246fb82c\"}",
+ "intent_type": "NewsletterPost", "is_high_priority": "0", "notification_id":
+ "97c15bd1-21a0-4327-88f9-d992c1e2244e", "notification_priority": "standard",
+ "patreon_service_name": "notif-platform", "post_id": "160523516",
+ "post_type": "text_only", "rate_limits": "[]", "recipient_size_bucket": "1",
+ "should_channel_throttle": "0", "should_ml_throttle": "0", "task_id":
+ "9d50fdc0-1950-4f4d-8d0a-4c040f3bc703", "template_name": "newsletterpost",
+ "timing":
+ "{\"client_start_time\":\"2026-06-08T16:08:02.845154\",\"notification_platform_entrypoint\":\"send_fanout_notifications\",\"notification_platform_received_time\":\"2026-06-08T16:08:04.852555\",\"filter_recipient_list_start_time\":\"2026-06-08T16:11:15.913107\",\"filter_recipient_list_end_time\":\"2026-06-08T16:11:16.193980\",\"notification_generation_start_time\":\"2026-06-08T16:11:16.193989\",\"notification_generation_end_time\":\"2026-06-08T16:11:17.265738\",\"channel_start_time\":\"2026-06-08T16:11:31.884012\",\"channel_provider_received_time\":\"2026-06-08T16:11:33.901485\",\"channel_delivered_time\":null}",
+ "user_id": "4782992"}
+Message-Id: <20260608161134.922973af69ae3bd2@creator.patreon.com>
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Original-Sender: thesyncopps@creator.patreon.com
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@creator.patreon.com header.s=pdk2 header.b=y1ruZtOY;       spf=pass
+ (google.com: domain of bounce+a847d3.94ce230-studios=autodidactic.ai@creator.patreon.com
+ designates 161.38.201.186 as permitted sender) smtp.mailfrom="bounce+a847d3.94ce230-studios=autodidactic.ai@creator.patreon.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=patreon.com
+X-Original-From: "The Sync Opps." <thesyncopps@creator.patreon.com>
+Precedence: list
+Mailing-list: list studios@autodidactic.ai; contact studios+owners@autodidactic.ai
+List-ID: <studios.autodidactic.ai>
+X-Google-Group-Id: 504113984088
+List-Post: <https://groups.google.com/a/autodidactic.ai/group/studios/post>, <mailto:studios@autodidactic.ai>
+List-Help: <https://support.google.com/a/autodidactic.ai/bin/topic.py?topic=25838>,
+ <mailto:studios+help@autodidactic.ai>
+List-Archive: <https://groups.google.com/a/autodidactic.ai/group/studios/>
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office" dir=3D"ltr"><head>
+<title>Medical Drama Series Needs Indie Folk ($4200 sync fee)</title>
+<!--[if !mso]><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=
+<!--<![endif]-->
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<style type=3D"text/css">
+#outlook a{padding: 0;}
+=2EReadMsgBody{width: 100%;}
+=2EExternalClass{width: 100%;}
+=2EExternalClass *{line-height: 100%;}
+body{margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-a=
+djust: 100%;}
+table, td{border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt;}
+img{border: 0; height: auto; line-height: 100%; outline: none; text-decorat=
+ion: none; -ms-interpolation-mode: bicubic;}
+p{display: block; margin: 13px 0;}
+</style>
+<!--[if mso]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+=2Eoutlook-group-fix{width:100% !important;}
+</style>
+<![endif]-->
+<style type=3D"text/css">=20
+@media only screen and (max-width: 480px) {
+=2Edys-desktop { display: none !important; }
+div.dys-mobile { display: block !important; }
+tr.dys-mobile { display: table-row !important; }=20
+}
+</style>
+ <style type=3D"text/css">
+@media only screen and (min-width:480px) {
+=2Edys-column-per-100 {
+width: 100.000000% !important;
+max-width: 100.000000%;
+}
+=2Edys-column-per-50 {
+width: 50.000000% !important;
+max-width: 50.000000%;
+}
+}
+</style>
+<style type=3D"text/css">
+@media only screen and (max-width:480px) {
+ table.full-width-mobile { width: 100% !important; }
+td.full-width-mobile { width: auto !important; }
+}
+u + #body a {color: #000000;text-decoration: underline;font-size: inherit; =
+font-family: inherit; font-weight: inherit; line-height: inherit; }
+ a {color: #000000;text-decoration: underline;}
+ /* Adds left and right padding to Apple mail */
+ [class^=3D"apple-mail"] #body {
+ padding: 0px 12px !important;=20
+ }=20
+ strong {
+ font-weight:600 !important;
+ }
+ b {
+ font-weight:600 !important;
+ }
+ /* inline image width */
+ td.post-content img {
+ max-width:592px;=20
+ }
+ /* list indentation */
+ td.post-content div ol {
+ margin-left: 5px !important;
+ padding-left: 16px !important;
+ }
+ td.post-content div ul {
+ margin-left:5px !important;
+ padding-left:16px !important;
+ }
+ /* set 20px between paragraphs */
+ td.post-content div p {
+ margin: 20px 0 !important;
+ mso-margin-top-alt: 20px !important;
+ mso-margin-bottom-alt: 20px !important;=20
+ }
+ /* set 10px between list items */
+ td.post-content div ul li,
+ td.post-content div ol li {
+ margin: 0 0 10px 0 !important;=20
+ }
+ /* set 10px between list items */
+ td.post-content li p {
+ margin: 0 0 10px 0 !important;
+ mso-margin-bottom-alt: 10px !important;
+ }
+ td.post-content li {
+ margin: 0 !important;
+ }
+ /* remove extra spacing after the last item in each list */
+ td.post-content div ul li:last-child,
+ td.post-content div ol li:last-child {
+ margin-bottom: 0 !important;
+ }
+ blockquote {
+ border-left:2px solid #070707 !important;
+ margin: 0; padding: 0;
+ padding-left:20px !important;
+ }
+ li p {
+ margin: 12px 0 !important;
+ }
+ @media only screen and (max-width:480px) {
+ td.post-content div p {
+ margin:18px 0 !important;
+ }
+ h1 {
+ font-size: 30px !important;
+ font-weight: 600 !important;
+ line-height:36px !important;
+ }
+ h3 {
+ font-size: 20px !important;
+ font-weight: 600 !important;
+ line-height: 26px !important;=20
+ }
+ h4 {
+ font-size:16px !important;
+ font-weight:600;
+ line-height: 21px !important;
+ }
+ /* padding for titles variant */
+ .pd-bt16 > h1 {
+ padding-bottom:16px !important;
+ }
+ }
+ @media only screen and (max-width: 480px) {
+ .pd-btm {
+ padding-bottom:12px !important;
+ }
+ .mb-pd-wrp > table > tbody > tr > td {
+ padding: 12px 14px !important;
+ }=20
+ .row-mb-pd > table > tbody > tr > td {
+ padding-left:4px !important;
+ padding-right:4px !important;
+ }
+ .stack-mb {
+ display:block !important;
+ }
+ .stack-mb-btn > table {
+ margin-top:16px !important;
+ }
+ }
+ @media only screen and (min-width:480px) {
+ .body-pd {
+ padding:20px 0 !important;
+ }
+ .row-mb-pd > table > tbody > tr > td {
+ padding-left:4px !important;
+ padding-right:4px !important;
+ }
+ }
+ .title-2lines{
+ display:-webkit-box;
+ -webkit-box-orient:vertical;
+ -webkit-line-clamp:2;
+ overflow:hidden;
+ text-overflow:ellipsis;
+ max-height:41.6px;
+ line-height:20.8px;
+ }
+=20
+ .cr-img img {width:42px !important;}
+ @media only screen and (max-width:440px) {
+ .title-mb-sz-26 > h2 {
+ font-size:30px !important;
+ line-height:36px !important;
+ }
+ }
+=20
+ @media only screen and (max-width:440px) {
+ .text-mb-sz-16 > div {
+ font-size:16px !important;
+ line-height:26px !important;
+ }
+ td.post-content li { margin: 0 !important; padding: 0 !important; }
+ /* 10px between paragraphs INSIDE list items (wins over the 16px rule abov=
+e) */
+ td.post-content li p,
+ .text-mb-sz-16 li p {
+ margin: 0 0 10px 0 !important;
+ mso-margin-bottom-alt: 10px !important;
+ }
+ /* 10px between list items */
+ td.post-content ul li,
+ td.post-content ol li,
+ .text-mb-sz-16 ul li,
+ .text-mb-sz-16 ol li {
+ margin: 0 0 10px 0 !important;
+ }
+ /* trim the extra space after the last item */
+ td.post-content ul li:last-child,
+ td.post-content ol li:last-child {
+ margin-bottom: 0 !important;
+ }
+ }=20
+ td.post-content div p li {
+ margin-left:0 !important;
+ padding-left:0 !important;
+ }
+ td.post-content div hr {
+ background-color: #cccccc !important;
+ border: none !important;
+ margin: 32px 0 !important;
+ height: 1px !important;
+ width: 100% !important;
+ }
+ td.post-content div h1 {
+ font-size:26px !important;
+ line-height:34px !important;
+ font-weight:600 !important;
+ }
+ td.post-content div h2 {
+ font-size:22px !important;
+ line-height:29px !important;
+ font-weight:600 !important;
+ }
+ td.post-content div h3 {
+ font-size:18px !important;
+ line-height:23px !important;
+ font-weight:600 !important;
+ }
+ td.post-content div p {
+ font-size:16px !important;
+ line-height:26px !important;
+ }
+ td.post-content div p.caption-text {
+ font-size:14px !important;
+ line-height:20px !important;
+ color: #666 !important;
+ }
+=20
+ .wrp-radius > table {
+ border:1px solid #e8e8e8 !important;
+ border-collapse:initial !important;
+ border-radius: 12px !important;
+ }
+=20
+ @media only screen and (max-width:480px) {
+ .full-width-mb > table {
+ width:100% !important;
+ }
+ .full-width-mb {
+ padding-left: 0 !important;
+ }
+ .mb-crd-pd > table > tbody > tr > td {
+ padding: 24px 16px !important;
+ }
+ .stack-container-mb > tbody > tr > td {
+ display: block !important;
+ width: 100% !important;
+ box-sizing: border-box !important;
+ }
+ .button-cell-mb {
+ padding-top: 16px !important;
+ padding-left: 0 !important;
+ max-width:100% !important;
+ }
+ }
+=20
+ @media only screen and (max-width: 480px) {
+ .footer-text > div {
+ text-align: left !important;
+ margin-top:16px !important;
+ }
+ .fnt12 > div {
+ font-size:12px !important;
+ }
+ }
+=20
+</style>
+
+
+</head>
+<body id=3D"body" style=3D"background-color: transparent;"><span id=3D"dys-=
+ph" style=3D"width:0;opacity:0;max-height:0;mso-hide:all;overflow:hidden;fl=
+oat:left;display:none !important;">Music Description:&nbsp;A hospital drama=
+ centered on a group of young doctors balancing personal struggles, life-ch=
+anging decisions, and emotionally charge...</span><span style=3D"display: n=
+one; max-height: 0px; overflow: hidden;">=E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+ &nbsp;</span><div style=3D"background-color: transparent;" class=3D"body-p=
+d">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]-->
+<div style=3D"margin:0px auto; max-width:600px;">
+<table align=3D"center" role=3D"presentation" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%"><tbody><tr><td style=3D"padding:12px 0px=
+ 12px 0px;vertical-align:top;">
+
+=20
+=20
+
+=20
+=20
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-title-outlook row-mb-pd-outlook" style=3D"width:600px;" width=
+=3D"600"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rul=
+e:exactly;">
+<![endif]--><div class=3D"mb-pd-title row-mb-pd" style=3D"margin:0px auto;m=
+ax-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td s=
+tyle=3D"direction:ltr;font-size:0px;padding:0px 4px;padding-bottom:16px;pad=
+ding-top:16px;text-align:center;vertical-align:top;"><!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:592px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tbody><tr><td align=3D"left" class=3D"title-mb-sz-30" style=3D"font-size:=
+0px;padding:0px 0px 20px;padding-bottom:16px;padding-top:0px;word-break:bre=
+ak-word;"><h2 style=3D"color:#000000;font-family:'SF Pro Display', -apple-s=
+ystem, system-ui, BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-serif, '=
+Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:32px;font=
+-weight:600;line-height:38px;margin:0;padding:0;text-align:left;text-decora=
+tion:none;"><a href=3D"https://www.patreon.com/posts/medical-drama-16052351=
+6?utm_campaign=3Dpatron_engagement&amp;utm_source=3Dpost_link&amp;post_id=
+=3D160523516&amp;token=3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWRpc19rZ=
+XkiOiJpYTI6NDgzNzQ3NTYtOGJkMC00NGE3LWI3ZDMtMTUxMTVhNDczMmIyIiwicG9zdF9pZCI6=
+MTYwNTIzNTE2LCJwYXRyb25faWQiOjQ3ODI5OTJ9.ylYbxN4p382UdEhSd41JeAcdNTMXHu1ecE=
+BDRJ2Oics&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=
+=3Demail" style=3D"text-decoration:none;color:#000000;"><span style=3D"text=
+-decoration:none;color:#000000;">Medical Drama Series Needs Indie Folk ($42=
+00 sync fee)</span></a></h2></td></tr>
+ <tr><td><div>
+ <div>
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on">
+ <tbody>
+ <tr>
+=20
+ <td class=3D"cr-img" style=3D"max-width:40px;padding-right:12px;" width=3D=
+"40">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td s=
+tyle=3D"width:42px;"><a href=3D"https://www.patreon.com/thesyncopps?utm_cam=
+paign=3Dpatron_engagement&amp;utm_source=3Dcreator_link&amp;utm_id=3D97c15b=
+d1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=3Demail" rel=3D"noopener nore=
+ferrer" style=3D"color:#000000;text-decoration:underline;" target=3D"_blank=
+"><span style=3D"color:#000000;text-decoration:underline;"><img height=3D"a=
+uto" src=3D"https://c10.patreonusercontent.com/4/patreon-media/p/campaign/1=
+0853791/b1a5fc7ccdfc4a2881f83152bac7c804/eyJoIjo3NSwidyI6NzV9/1.png?token-h=
+ash=3D8e-aS7PX4sKFN2giPkp3GGFjuOAtVvH26L8mIuebX7Q%3D" style=3D"border:none;=
+border-radius:4px;display:block;font-size:13px;height:auto;outline:none;tex=
+t-decoration:none;width:100%;" width=3D"42"></span></a></td></tr></tbody></=
+table>
+ </td>
+=20
+ <td>
+=20
+=20
+ <h4 style=3D"color:#000000;font-family:'SF Pro Display', -apple-system, sy=
+stem-ui, BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Col=
+or Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:14px;font-weight:6=
+00;line-height:18px;margin:0;padding:0;text-align:left;"><a href=3D"https:/=
+/www.patreon.com/thesyncopps?utm_campaign=3Dpatron_engagement&amp;utm_sourc=
+e=3Dcreator_link&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_=
+medium=3Demail" style=3D"text-decoration:none;color:#000000;"><span style=
+=3D"text-decoration:none;color:#000000;">The Sync Opps.</span></a></h4>
+=20
+=20
+ <div style=3D"color:#666666;font-family:-apple-system, system-ui, BlinkMac=
+SystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe=
+ UI Emoji', 'Segoe UI Symbol';font-size:14px;font-weight:400;line-height:20=
+px;text-align:left;">Jun 8, 2026</div>
+=20
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div></td></tr>
+ <tr><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"heigh=
+t:16px;line-height:16px;">=E2=80=8A</div></td></tr>
+ <tr><td><div>
+ <div>
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"icon-mb-a=
+l">
+ <tbody>
+ <tr style=3D"padding-top 16px;">
+ <td align=3D"left" style=3D"padding-right: 8px">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" style=3D"border-collapse:separate;line-height:100%;"><tbody><tr><td ali=
+gn=3D"center" bgcolor=3D"transparent" role=3D"presentation" style=3D"border=
+:1px solid #cccccc;background:transparent;border-radius:50px;cursor:auto;ms=
+o-padding-alt:8px;" valign=3D"middle"><a class=3D"dys-button-a" href=3D"htt=
+ps://www.patreon.com/posts/medical-drama-160523516?utm_campaign=3Dpatron_en=
+gagement&amp;utm_source=3Dpost_link&amp;post_id=3D160523516&amp;token=3DeyJ=
+hbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWRpc19rZXkiOiJpYTI6NDgzNzQ3NTYtOGJkM=
+C00NGE3LWI3ZDMtMTUxMTVhNDczMmIyIiwicG9zdF9pZCI6MTYwNTIzNTE2LCJwYXRyb25faWQi=
+OjQ3ODI5OTJ9.ylYbxN4p382UdEhSd41JeAcdNTMXHu1ecEBDRJ2Oics&amp;utm_id=3D97c15=
+bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=3Demail" rel=3D"noopener nor=
+eferrer" style=3D"background:transparent;border-radius:50px;color:#ffffff;d=
+isplay:inline-block;font-family:'SF Pro Display', -apple-system, system-ui,=
+ BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:16px;font-weight:600;line-=
+height:16px;margin:0;mso-padding-alt:0px;padding:8px;text-decoration:none;t=
+ext-transform:none;" target=3D"_blank"><!--[if mso | IE]><span style=3D"mso=
+-text-raise:-2px;"><![endif]--><img alt=3D"like" src=3D"https://cdn-web-ass=
+ets.dyspatch.io/org_01gvh8mwwb22j90stngkwjbkvx/fdr_01jmdv6s5fevecq2mwr1tmmw=
+ss%2FmEPm9PuPRYKykZNvWcmk_HeartOutline.png" style=3D"vertical-align:-2px;wi=
+dth:19px;" width=3D"19"><!--[if mso | IE]></span><![endif]--></a></td></tr>=
+</tbody></table>
+ </td>
+ <td align=3D"center" style=3D"padding-right: 8px">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" style=3D"border-collapse:separate;line-height:100%;"><tbody><tr><td ali=
+gn=3D"center" bgcolor=3D"transparent" role=3D"presentation" style=3D"border=
+:1px solid #cccccc;background:transparent;border-radius:50px;cursor:auto;ms=
+o-padding-alt:8px;" valign=3D"middle"><a class=3D"dys-button-a" href=3D"htt=
+ps://www.patreon.com/posts/medical-drama-160523516?utm_campaign=3Dpatron_en=
+gagement&amp;utm_source=3Dpost_link&amp;post_id=3D160523516&amp;token=3DeyJ=
+hbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWRpc19rZXkiOiJpYTI6NDgzNzQ3NTYtOGJkM=
+C00NGE3LWI3ZDMtMTUxMTVhNDczMmIyIiwicG9zdF9pZCI6MTYwNTIzNTE2LCJwYXRyb25faWQi=
+OjQ3ODI5OTJ9.ylYbxN4p382UdEhSd41JeAcdNTMXHu1ecEBDRJ2Oics&amp;utm_id=3D97c15=
+bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=3Demail" rel=3D"noopener nor=
+eferrer" style=3D"background:transparent;border-radius:50px;color:#ffffff;d=
+isplay:inline-block;font-family:'SF Pro Display', -apple-system, system-ui,=
+ BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:16px;font-weight:600;line-=
+height:16px;margin:0;mso-padding-alt:0px;padding:8px;text-decoration:none;t=
+ext-transform:none;" target=3D"_blank"><!--[if mso | IE]><span style=3D"mso=
+-text-raise:-2px;"><![endif]--><img alt=3D"comment" src=3D"https://cdn-web-=
+assets.dyspatch.io/org_01gvh8mwwb22j90stngkwjbkvx/fdr_01jmdv6s5fevecq2mwr1t=
+mmwss%2FpONe1AzqSS2ydddAswCs_BubbleOutlined%20(1).png" style=3D"vertical-al=
+ign:-2px;width:19px;" width=3D"19"><!--[if mso | IE]></span><![endif]--></a=
+></td></tr></tbody></table>
+ </td>
+ <td align=3D"right" style=3D"padding-right: 8px">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" style=3D"border-collapse:separate;line-height:100%;"><tbody><tr><td ali=
+gn=3D"center" bgcolor=3D"transparent" role=3D"presentation" style=3D"border=
+:1px solid #cccccc;background:transparent;border-radius:50px;cursor:auto;ms=
+o-padding-alt:8px;" valign=3D"middle"><a class=3D"dys-button-a" href=3D"htt=
+ps://www.patreon.com/posts/medical-drama-160523516?utm_campaign=3Dpatron_en=
+gagement&amp;utm_source=3Dpost_link&amp;post_id=3D160523516&amp;token=3DeyJ=
+hbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWRpc19rZXkiOiJpYTI6NDgzNzQ3NTYtOGJkM=
+C00NGE3LWI3ZDMtMTUxMTVhNDczMmIyIiwicG9zdF9pZCI6MTYwNTIzNTE2LCJwYXRyb25faWQi=
+OjQ3ODI5OTJ9.ylYbxN4p382UdEhSd41JeAcdNTMXHu1ecEBDRJ2Oics&amp;utm_id=3D97c15=
+bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=3Demail" rel=3D"noopener nor=
+eferrer" style=3D"background:transparent;border-radius:50px;color:#ffffff;d=
+isplay:inline-block;font-family:'SF Pro Display', -apple-system, system-ui,=
+ BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:16px;font-weight:600;line-=
+height:16px;margin:0;mso-padding-alt:0px;padding:8px;text-decoration:none;t=
+ext-transform:none;" target=3D"_blank"><!--[if mso | IE]><span style=3D"mso=
+-text-raise:-2px;"><![endif]--><img alt=3D"share" src=3D"https://cdn-web-as=
+sets.dyspatch.io/org_01gvh8mwwb22j90stngkwjbkvx/fdr_01jmdv6s5fevecq2mwr1tmm=
+wss%2FFkHQyZCfR8O5oErCuqC4_Share%20(2).png" style=3D"vertical-align:-2px;wi=
+dth:19px;" width=3D"19"><!--[if mso | IE]></span><![endif]--></a></td></tr>=
+</tbody></table>
+ </td>
+ <td>
+=20
+ <div class=3D"dys-desktop"><table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line-heigh=
+t:100%;"><tbody><tr><td align=3D"center" bgcolor=3D"transparent" role=3D"pr=
+esentation" style=3D"border:1px solid #CCCCCC;border-color:#CCCCCC;backgrou=
+nd:transparent;border-radius:50px;cursor:auto;mso-padding-alt:8px 20px;" va=
+lign=3D"middle"><a class=3D"dys-button-a" href=3D"https://open.patreon.com/=
+posts/medical-drama-160523516?utm_campaign=3Dpatron_engagement&amp;utm_sour=
+ce=3Dpost_link&amp;post_id=3D160523516&amp;token=3DeyJhbGciOiJIUzI1NiIsInR5=
+cCI6IkpXVCJ9.eyJyZWRpc19rZXkiOiJpYTI6NDgzNzQ3NTYtOGJkMC00NGE3LWI3ZDMtMTUxMT=
+VhNDczMmIyIiwicG9zdF9pZCI6MTYwNTIzNTE2LCJwYXRyb25faWQiOjQ3ODI5OTJ9.ylYbxN4p=
+382UdEhSd41JeAcdNTMXHu1ecEBDRJ2Oics&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d9=
+92c1e2244e&amp;utm_medium=3Demail" rel=3D"noopener noreferrer" style=3D"bac=
+kground:transparent;border-radius:50px;color:#000000;display:inline-block;f=
+ont-family:'SF Pro Display', -apple-system, system-ui, BlinkMacSystemFont, =
+'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', =
+'Segoe UI Symbol';font-size:14px;font-weight:600;line-height:20px;margin:0;=
+mso-padding-alt:0px;padding:8px 20px;text-decoration:none;text-transform:no=
+ne;" target=3D"_blank">View in app</a></td></tr></tbody></table></div>
+=20
+=20
+ <div><!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"border-collapse:separate;line-height:100%;"><tbody><tr><td align=
+=3D"center" bgcolor=3D"transparent" role=3D"presentation" style=3D"border:1=
+px solid #CCCCCC;border-color:#CCCCCC;background:transparent;border-radius:=
+50px;cursor:auto;mso-padding-alt:8px 20px;" valign=3D"middle"><a class=3D"d=
+ys-button-a" href=3D"https://open.patreon.com/posts/medical-drama-160523516=
+?utm_campaign=3Dpatron_engagement&amp;utm_source=3Dpost_link&amp;post_id=3D=
+160523516&amp;token=3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWRpc19rZXki=
+OiJpYTI6NDgzNzQ3NTYtOGJkMC00NGE3LWI3ZDMtMTUxMTVhNDczMmIyIiwicG9zdF9pZCI6MTY=
+wNTIzNTE2LCJwYXRyb25faWQiOjQ3ODI5OTJ9.ylYbxN4p382UdEhSd41JeAcdNTMXHu1ecEBDR=
+J2Oics&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=3De=
+mail" rel=3D"noopener noreferrer" style=3D"background:transparent;border-ra=
+dius:50px;color:#000000;display:inline-block;font-family:'SF Pro Display', =
+-apple-system, system-ui, BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-=
+serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:1=
+4px;font-weight:600;line-height:20px;margin:0;mso-padding-alt:0px;padding:8=
+px 20px;text-decoration:none;text-transform:none;" target=3D"_blank">View i=
+n app</a></td></tr></tbody></table></div><!--[endif]--></div>
+=20
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div></td></tr>
+ </tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+=20
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"row-mb-pd-outlook" style=3D"width:600px;" width=3D"600"><tr><td styl=
+e=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"row-mb-pd" style=3D"margin:0px auto;max-width:600=
+px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"dire=
+ction:ltr;font-size:0px;padding:0px 4px;padding-bottom:0px;padding-left:12p=
+x;padding-right:12px;padding-top:0px;text-align:center;vertical-align:top;"=
+><!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:576px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tbody><tr><td align=3D"left" class=3D"text-mb-sz-16 post-content" style=
+=3D"font-size:0px;padding:0px 0px 16px;padding-bottom:0;word-break:break-wo=
+rd;"><div style=3D"color:#000000;font-family:-apple-system, system-ui, Blin=
+kMacSystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji', 'S=
+egoe UI Emoji', 'Segoe UI Symbol';font-size:18px;font-weight:400;line-heigh=
+t:29px;text-align:left;"><p style=3D"margin-top:0;margin-bottom:0"></p><p s=
+tyle=3D"margin:10px 0"><strong>Music Description:</strong>&nbsp;A hospital =
+drama centered on a group of young doctors balancing personal struggles, li=
+fe-changing decisions, and emotionally charged emergencies is in need of an=
+ Indie Folk track for the series intro/theme music. </p><p style=3D"margin:=
+10px 0"><strong>Soundalike or Similar Style:</strong>&nbsp;Imagine the Indi=
+e Folk style of the music from =E2=80=9CFirst Day of My Life=E2=80=9D by Br=
+ight Eyes.</p><p style=3D"margin:10px 0"><strong>Era:</strong>&nbsp;Modern =
+production with an Indie Folk style.</p><p style=3D"margin:10px 0"><strong>=
+Tempo:</strong>&nbsp;Moderate tempo music.</p><p style=3D"margin:10px 0"><s=
+trong>Format:</strong> Music and vocals needed. Lyrics similar to the sound=
+alike reference track would be ideal. </p><p style=3D"margin:10px 0"><stron=
+g>Rights:</strong>&nbsp;One stop or easy clear rights required, you must ow=
+n or represent 100% of the music (composer, publishing, and sound recording=
+ rights).</p><p style=3D"margin:10px 0"><strong>Term:</strong>&nbsp;Perpetu=
+ity required for worldwide use.</p><p style=3D"margin:10px 0"><strong>Fee A=
+vailable:</strong>&nbsp;$4200.00</p><p style=3D"margin:10px 0"><strong>Subm=
+ission Guidelines:</strong>&nbsp;Please send music submission links to: the=
+syncopps(at)gmail(dot)com. Links to streamable music only. All attached fil=
+es that require download will not be reviewed or considered.</p><p style=3D=
+"margin:10px 0"><strong>Deadline</strong>: Monday, September 14, 2026</p><b=
+lockquote><p style=3D"margin:10px 0">*How to submit your music to an opport=
+unity - info link:</p></blockquote><blockquote><p style=3D"margin:10px 0"><=
+strong><a href=3D"https://www.patreon.com/posts/how-to-submit-to-87994135?u=
+tm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=3Demail" target=
+=3D"_blank">https://www.patreon.com/posts/how-to-submit-to-87994135</a></st=
+rong><strong><br></strong><strong><br></strong><strong>Optional Submission =
+Form Link: </strong><a href=3D"https://syncopps.short.gy/wNCTyx" target=3D"=
+_blank">https://syncopps.short.gy/wNCTyx</a><br><em>*</em><em><a href=3D"ht=
+tps://www.patreon.com/posts/new-monthly-155178279?utm_id=3D97c15bd1-21a0-43=
+27-88f9-d992c1e2244e&amp;utm_medium=3Demail" target=3D"_blank">Members Mont=
+hly Report</a></em><em> optional form submission. All members can still sub=
+mit through normal email submissions if they choose. All email submissions =
+including Disco Email submissions will </em><em><strong>not</strong></em><e=
+m> be included in monthly reports.</em></p></blockquote><p style=3D"margin:=
+10px 0"></p><p></p></div></td></tr>
+ </tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+
+=20
+=20
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"row-mb-pd-outlook" style=3D"width:600px;" width=3D"600"><tr><td styl=
+e=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"row-mb-pd" style=3D"margin:0px auto;max-width:600=
+px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"dire=
+ction:ltr;font-size:0px;padding:16px 4px;text-align:center;vertical-align:t=
+op;"><!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;">
+<![endif]--><!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-cr-outlook card-pd-32-outlook mb-crd-pd-outlook" style=3D"widt=
+h:592px;" width=3D"592"><tr><td style=3D"line-height:0px;font-size:0px;mso-=
+line-height-rule:exactly;">
+<![endif]--><div class=3D"mb-pd-cr card-pd-32 mb-crd-pd" style=3D"backgroun=
+d-color:#F5F5F5;border-radius:8px;margin:0px auto;max-width:592px;"><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"background-color:#F5F5F5;border-collapse:separate;bor=
+der-radius:8px;width:100%;"><tbody><tr><td style=3D"border-radius:8px;direc=
+tion:ltr;font-size:0px;padding:24px;text-align:center;vertical-align:top;">=
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:544px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tbody><tr><td><div>
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"stack-con=
+tainer-mb" width=3D"100%">
+ <tbody>
+ <tr>
+ <td valign=3D"middle">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+ <tbody>
+ <tr>
+ <td height=3D"60" style=3D"min-width:60px;min-height:60px;width:60px;heigh=
+t:60;" width=3D"60">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td s=
+tyle=3D"width:60px;"><img height=3D"auto" src=3D"https://c10.patreonusercon=
+tent.com/4/patreon-media/p/campaign/10853791/b1a5fc7ccdfc4a2881f83152bac7c8=
+04/eyJoIjoxMjAsInciOjEyMH0%3D/1.png?token-hash=3D7YskgYaymhBaVYggo9qgoSGfM_=
+WTJ0fwSrHrNETk1ek%3D" style=3D"border:none;border-radius:60px;display:block=
+;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;" =
+width=3D"60"></td></tr></tbody></table>
+ </td>
+ <td style=3D"padding-left:16px;">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+ <tbody>
+ <tr>
+ <td>
+ <h4 style=3D"color:#000000;font-family:'SF Pro Display', -apple-system, sy=
+stem-ui, BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Col=
+or Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:16px;font-weight:6=
+00;line-height:21px;margin:0;padding:0;text-align:left;"><p style=3D"margin=
+-top:0;margin-bottom:0"> Did you like this post?</p></h4>
+ </td>
+ </tr>
+ <tr>
+ <td style=3D"padding-top:4px;">
+ <div style=3D"color:#626262;font-family:-apple-system, system-ui, BlinkMac=
+SystemFont, 'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe=
+ UI Emoji', 'Segoe UI Symbol';font-size:14px;font-weight:400;line-height:20=
+px;text-align:left;"><p style=3D"margin-top:0;margin-bottom:0"> Share this =
+post with someone who might enjoy it.</p></div>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ </td>
+ <td class=3D"button-cell-mb" style=3D"width:180px;max-width:180px;padding-=
+left:16px;word-break: break-all;" width=3D"180">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" style=3D"border-collapse:separate;line-height:100%;width:100%;"><tbody>=
+<tr><td align=3D"center" bgcolor=3D"#0D0D0D" role=3D"presentation" style=3D=
+"border:1px solid #0D0D0D;border-color:#0D0D0D;background:#0D0D0D;border-ra=
+dius:50px;cursor:auto;mso-padding-alt:8px 20px;" valign=3D"middle"><a class=
+=3D"dys-button-a" href=3D"https://www.patreon.com/posts/medical-drama-16052=
+3516?utm_campaign=3Dpatron_engagement&amp;utm_source=3Dpost_link&amp;post_i=
+d=3D160523516&amp;token=3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWRpc19r=
+ZXkiOiJpYTI6NDgzNzQ3NTYtOGJkMC00NGE3LWI3ZDMtMTUxMTVhNDczMmIyIiwicG9zdF9pZCI=
+6MTYwNTIzNTE2LCJwYXRyb25faWQiOjQ3ODI5OTJ9.ylYbxN4p382UdEhSd41JeAcdNTMXHu1ec=
+EBDRJ2Oics&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=
+=3Demail" rel=3D"noopener noreferrer" style=3D"background:#0D0D0D;border-ra=
+dius:50px;color:#ffffff;display:block;font-family:'SF Pro Display', -apple-=
+system, system-ui, BlinkMacSystemFont, 'Inter', Roboto, Arial, sans-serif, =
+'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';font-size:14px;fon=
+t-weight:600;line-height:20px;margin:0;mso-padding-alt:0px;padding:8px 20px=
+;text-decoration:none;text-transform:none;" target=3D"_blank">Share</a></td=
+></tr></tbody></table>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ </div></td></tr>
+ </tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+
+=20
+=20
+=20
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"row-mb-pad-outlook" style=3D"width:600px;" width=3D"600"><tr><td sty=
+le=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"row-mb-pad" style=3D"margin:0px auto;max-width:60=
+0px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"dir=
+ection:ltr;font-size:0px;padding:0px 4px;padding-top:28px;text-align:center=
+;vertical-align:top;"><!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:592px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tbody><tr><td align=3D"center" style=3D"font-size:0px;padding:0px;word-br=
+eak:break-word;"><p style=3D"border-top-color:#E8E8E8;border-top-style:soli=
+d;border-top-width:1px;font-size:1px;margin:0px auto;width:100%;"></p><!--[=
+if mso | IE]><table align=3D'center' border=3D'0' cellpadding=3D'0' cellspa=
+cing=3D'0' role=3D'presentation' style=3D'border-top-color:#E8E8E8;border-t=
+op-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width:592=
+px;' width=3D'592px'><tr><td style=3D'height:0;line-height:0;'>&nbsp</td></=
+tr></table><![endif]--></td></tr>
+ </tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+=20
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"row-mb-pad-outlook" style=3D"width:600px;" width=3D"600"><tr><td sty=
+le=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"row-mb-pad" style=3D"margin:0px auto;max-width:60=
+0px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"dir=
+ection:ltr;font-size:0px;padding:0px 4px;padding-top:16px;text-align:center=
+;vertical-align:top;"><!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:296px;">
+<![endif]--><div class=3D"dys-column-per-50 outlook-group-fix" style=3D"dir=
+ection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-ali=
+gn:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tbody><tr><td align=3D"left" class=3D"fnt12" style=3D"font-size:0px;paddi=
+ng:0px 0px 16px;padding-bottom:0;word-break:break-word;"><div style=3D"colo=
+r:#666666;font-family:-apple-system, system-ui, BlinkMacSystemFont, 'Inter'=
+, Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe =
+UI Symbol';font-size:12px;font-weight:400;line-height:17px;text-align:left;=
+">
+ =C2=A9 2026 The Sync Opps.<br><a href=3D"https://privacy.patreon.com/polic=
+ies?utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_medium=3Demail" r=
+el=3D"noopener noreferrer" style=3D"color:#666666;text-decoration:underline=
+" title=3D"Patreon's privacy policy">Privacy policy</a> | <a href=3D"https:=
+//www.patreon.com/policy/legal?utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244=
+e&amp;utm_medium=3Demail" rel=3D"noopener noreferrer" style=3D"color:#66666=
+6;text-decoration:underline" title=3D"Patreon's terms of use">Terms of use<=
+/a>
+ 600 Townsend Street<br>San Francisco, CA 94103
+ </div></td></tr>
+=20
+=20
+ </tbody></table></div><!--[if mso | IE]>
+</td><td style=3D"vertical-align:top;width:296px;">
+<![endif]--><div class=3D"dys-column-per-50 outlook-group-fix" style=3D"dir=
+ection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-ali=
+gn:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tbody><tr><td align=3D"right" class=3D"footer-text" style=3D"font-size:0p=
+x;padding:0px 0px 16px;padding-bottom:0;word-break:break-word;"><div style=
+=3D"color:#666666;font-family:-apple-system, system-ui, BlinkMacSystemFont,=
+ 'Inter', Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',=
+ 'Segoe UI Symbol';font-size:12px;font-weight:400;line-height:17px;text-ali=
+gn:right;">Email was sent to <a href=3D"mailto:studios@autodidactic.ai" rel=
+=3D"noopener noreferrer" style=3D"color:#666666;text-decoration:underline">=
+studios@autodidactic.ai</a><br><a href=3D"https://www.patreon.com/email-uns=
+ubscribe?token=3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGQiOiJaMEZCUVVGQ=
+lFuRktkVzB4VVdVMmRYcElORTV6WnpGUVEwZ3djVkpGTlc5cU1GWkpabFpCYW5adGVVeFlkMkZM=
+UW5FMFRqQjRWakZOYzA1dU1XZHRkMjlsVHpkb1R6QlFjREJxYVZScmFEaFJTRGxNY1RGelgxVnl=
+XbmRwV21kUFdtOU5VVmRzYzFwVU5IWnFYMGRoVnpkc2NIUmhMVGhFVEZCbFlWTmZNbTR6Vmw4eW=
+VVeE9kVFE1UVVoMVlVczFlRUZPUVZWc09GTnlRMVZrVG5Rd1VTMW9UVzlJVUdjMlYzbDFhR1ZCY=
+UZCMWVuTmZZa3RPUmtSTlVYbEZZV1JoY2tac1EwSkRTekZUVjBobVEzZzFhSFExZEVGc2JtbG9a=
+Rk10Y0dFMVptaG9VbGRVUzJOdldIVnlVRmxzWVhaUWRsWllVMk5tWmxFNFJUTTVUVEV0ZUZsNWR=
+IVjFYeTF0WkdoQlkzVXpUR1U0WW1OWGVtWlRaamsxU1VaWGJXUXlUMmsyY1ZkclNYcEdabTVYUW=
+00eWJHTnZhVmRJUjBaT2MzRmlibGhzYzA5alpFWnFVREpCV25aTk5EVlRhRlpWVkRGemFDMXdkM=
+XAyWlhKRmFWZHNOa0kwU1cxdE1WOXpTVWxETUVSR1pXSkpVbDl3TFRaWVZFMHdhVFJuT0RKM2Mw=
+a3RPWGhRWVhGTU9UVlNjRFEyWWtac2JHdzFZMU5oVWtFdE5WZDBaV2x4VlZGS2NXNTZWekJwVUV=
+sd1JVdzNlWEJmTjJ4TE5FYzFhbEI1ZDNsT2JFbGZXbGxyU1ZFeUxWQjJZWEoyVG1KV1NVcFBXbk=
+p3WTBad1dGOXdURXRRTTFCTVMyNUNNRFpRVGtkVE9Ha3laVUl6Um5oaVJrazkifQ.sqDlm1K1qE=
+c_pZXNP5ROuPqTYarbMmlKTtCn3vfPBQ8&amp;utm_campaign=3Dpatron_engagement&amp;=
+utm_source=3Dunsubscribe&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&=
+amp;utm_medium=3Demail" rel=3D"noopener noreferrer" style=3D"color:#666666;=
+text-decoration:underline">Unsubscribe</a> | <a href=3D"https://www.patreon=
+=2Ecom/settings/email/thesyncopps?utm_=
+campaign=3Dpatron_engagement&amp;utm_so=
+urce=3Dmanage_email_settings&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e22=
+44e&amp;utm_medium=3Demail" rel=3D"noopener noreferrer" style=3D"color:#666=
+666;text-decoration:underline">Manage your email settings</a></div></td></t=
+r>
+ </tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"row-mb-pad-outlook" style=3D"width:600px;" width=3D"600"><tr><td sty=
+le=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"row-mb-pad" style=3D"margin:0px auto;max-width:60=
+0px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"dir=
+ection:ltr;font-size:0px;padding:0px 4px;padding-top:16px;text-align:center=
+;vertical-align:top;"><!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:592px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tbody><tr><td align=3D"left" class=3D"fnt12" style=3D"font-size:0px;paddi=
+ng:0px 0px 16px;padding-top:0px;word-break:break-word;"><div style=3D"color=
+:#666666;font-family:-apple-system, system-ui, BlinkMacSystemFont, 'Inter',=
+ Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe U=
+I Symbol';font-size:12px;font-weight:400;line-height:17px;text-align:left;"=
+>
+ Download the app - <a href=3D"https://open.patreon.com/posts/medical-drama=
+-160523516?utm_campaign=3Dpatron_engagement&amp;utm_source=3Dpost_link&amp;=
+post_id=3D160523516&amp;token=3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZW=
+Rpc19rZXkiOiJpYTI6NDgzNzQ3NTYtOGJkMC00NGE3LWI3ZDMtMTUxMTVhNDczMmIyIiwicG9zd=
+F9pZCI6MTYwNTIzNTE2LCJwYXRyb25faWQiOjQ3ODI5OTJ9.ylYbxN4p382UdEhSd41JeAcdNTM=
+XHu1ecEBDRJ2Oics&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992c1e2244e&amp;utm_=
+medium=3Demail" rel=3D"noopener noreferrer" style=3D"color:#666666;text-dec=
+oration:underline">Google Play</a> | <a href=3D"https://open.patreon.com/po=
+sts/medical-drama-160523516?utm_campaign=3Dpatron_engagement&amp;utm_source=
+=3Dpost_link&amp;post_id=3D160523516&amp;token=3DeyJhbGciOiJIUzI1NiIsInR5cC=
+I6IkpXVCJ9.eyJyZWRpc19rZXkiOiJpYTI6NDgzNzQ3NTYtOGJkMC00NGE3LWI3ZDMtMTUxMTVh=
+NDczMmIyIiwicG9zdF9pZCI6MTYwNTIzNTE2LCJwYXRyb25faWQiOjQ3ODI5OTJ9.ylYbxN4p38=
+2UdEhSd41JeAcdNTMXHu1ecEBDRJ2Oics&amp;utm_id=3D97c15bd1-21a0-4327-88f9-d992=
+c1e2244e&amp;utm_medium=3Demail" rel=3D"noopener noreferrer" style=3D"color=
+:#666666;text-decoration:underline">App Store</a>
+ </div></td></tr>=20
+ </tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endi=
+f]--></div> <img width=3D"1" height=3D"1" alt=3D"" src=3D"http://email.crea=
+tor.patreon.com/o/eJyMVMuO5CgQ_Br7srLF0zYHDjPb59Ec9o4oSFexbYMFuGZqv37lR9dju=
+qSui2UgMojMjOQwD-9qDBYkKo0eJ-2OXjkrMeo4bQUuzZxyGJUP3oD8Ab_SADlD_BlSLug33CBO=
+KMdNQb8RRJoKNRXq_lrXqFs-tLRSMAOEotKGUTuvwhlidBakiaBziPWkc4TgaxPGEiRuOyQoR4K=
+VMGo3qKsur0eQOWqftMkueD3sCGelaA3mB4srgjWqGCVt1XW9qKwQxGAghDHY0T5k16un2d4D8m=
+UCeUVtJ1NIeQdN0YXo8kWmrL3V0e776ZIyjHJdVAni2Rmo_Oz_nc17KuF3jloN4Xh0_qimGKYki=
+_Z7QQj47PJFOVsQUtBvfh6GgvxdEDJFN-p4URtgO30acmvGGrefLmnsQYQs-pdF-7ZhEpiwiN_Z=
+HaQ_b0_gLcT7W7ed26177e7hj5d-1PD-4rvqX3E3JrKB1j44o5der82_Qn_Ar597Kiuy1z7M-Z4=
+MYQG67W11sD2rWtuQSnSMVUZQSljTHzpiNkHlSXLGm0bTxhjB2862VjQCWS4a0XHeal06ubgbNa=
+jDDcaU1YIQ0VLdN0IDPVhSMPTMzc5n8Hmz0uPwlC6pkzuebj5C5UO-r3r6IeizKXc1anfiNkNrT=
+DUNOvchjuXiinUMPgy07ayqM_zOKvjhUkaZ8mxdSAVDes7BOruMoam1K6POoAY3upxkwb8X_K2M=
+YNzkluyT-w_UYTbvkCUu0ynMg1XmpL2HQeVTDDkPy_uzn4wPm1lmGBeloPy1gOsYZp3e1ypZjnp=
+rUIUFRxXrma06i3TFDGKopwfTIlreSNb8_2Byo_PHfQ7NsInOOmaV3Z3pbg_cP3cPHKk7xjFnz1=
+37UeNlvuJlCs7nK98yK2p37n1Q-oIqggF3BvuKOlZ3nHDOb5PihgxR3bozuPRSthgvH14LTDFqv=
+-BbMnuBramxoKJDzxM-goe4_b6sb2cUXzK-qLCtScNb2l35Pnz7qiKK665jCJNPDFMMZ2e32r3Q=
+z42N1gJh1vFPbBYGd4b4wLK-4u1bOaf1vZas7YgQpDxL8n8AAAD__8HfgUc"></body></html>
