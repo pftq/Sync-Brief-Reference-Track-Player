@@ -58,7 +58,7 @@
       </div>
       <div id="sbtp-footer">
         <span id="sbtp-yt-logo">▶ YouTube</span>
-        <span id="sbtp-hint">Hover a track to preview • pin to keep open</span>
+        <span id="sbtp-hint">Hover a track to preview • close when done</span>
       </div>
     `;
 
@@ -247,9 +247,6 @@
         span.addEventListener('mouseenter', () => {
           clearTimeout(hideTimer);
           showPlayer(trackName, artistName);
-        });
-        span.addEventListener('mouseleave', () => {
-          if (!pinned) scheduleHide(900);
         });
         span.addEventListener('click', (e) => {
           e.stopPropagation();
