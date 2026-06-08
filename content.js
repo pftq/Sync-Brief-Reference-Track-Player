@@ -99,9 +99,6 @@
     playerContainer.addEventListener('mouseenter', () => {
       clearTimeout(hideTimer);
     });
-    playerContainer.addEventListener('mouseleave', () => {
-      if (!pinned) scheduleHide(1200);
-    });
   }
 
   // ─── Show / Hide ──────────────────────────────────────────────────────────
