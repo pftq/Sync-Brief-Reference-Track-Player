@@ -1,4 +1,5 @@
 Sync Brief Reference Track Player (Chrome extension for gmail)
+
 by pftq
 
 Handy tool for playing the reference track automatically on sync brief emails.
